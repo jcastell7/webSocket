@@ -1,8 +1,6 @@
 const app = require("./routes");
 const { Services } = require("./services");
-const wbClient = Services.WebSocket.webSocketConnect('ws://localhost:7777/');
-let messages = [];
-Services.WebSocket.receiveAndStoreMsg(wbClient, messages);
+const { connections } = require("./models");
 
 app.get("/", function(req, res) {
   console.log(req);
@@ -10,3 +8,19 @@ app.get("/", function(req, res) {
 });
 
 app.listen(3000);
+
+connections
+  .authenticate()
+  .then(() => {
+    console.log("Connection to sqlite successfully");
+  })
+  .catch(err => {
+    console.error("Unable to connect to the sqlite database:", err);
+  });
+connections.sync();
+
+const wbClient = Services.WebSocket.webSocketConnect('ws://localhost:7777/');
+
+Services.WebSocket.receiveAndStoreMsg(wbClient);
+
+
