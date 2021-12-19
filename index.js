@@ -3,7 +3,7 @@ const { Services } = require("./services");
 const { connections } = require("./models");
 
 app.get("/", function(req, res) {
-  console.log(req);
+  //console.log(req);
   res.status(200).send("api is working");
 });
 
@@ -22,5 +22,3 @@ connections.sync();
 const wbClient = Services.WebSocket.webSocketConnect('ws://localhost:7777/');
 
 Services.WebSocket.receiveAndStoreMsg(wbClient);
-
-

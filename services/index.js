@@ -1,5 +1,6 @@
 module.exports = {
     Services: {
-      WebSocket: require("./websocketConnect")
+      WebSocket: require("./websocketConnect"),
+      PhoneCall: require("./phoneCall"),
     }
   };
