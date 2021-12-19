@@ -1,6 +1,7 @@
-/*module.exports = {
+const { connections } = require("./sequelize");
+module.exports = {
   Model: {
-    ...require("./abogado")
+    ...require("./phoneCall"),
   },
   connections
-};*/
+};

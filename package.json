@@ -19,6 +19,8 @@
   "homepage": "https://github.com/jcastell7/webSocket#readme",
   "dependencies": {
     "express": "^4.17.2",
+    "sequelize": "^6.12.0",
+    "sqlite3": "^5.0.2",
     "websocket": "^1.0.34"
   }
 }
