@@ -9,7 +9,6 @@ router.get("/pop", (req, res, next) => {
     console.log("this is the priority: ", priority);
     res.status(200).end(JSON.stringify(priority));
   });
-  //res.status(200).send(Services.PhoneCall.getBiggerPriority());
 });
 
 module.exports = router;
