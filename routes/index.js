@@ -19,9 +19,6 @@ app.use(function (req, res, next) {
     // Pass to next layer of middleware
     next();
 });
-/*
-app.use("/abogado", require("./abogado"));
-app.use("/usuario", require("./user"));
-app.use("/blog", require("./blog"));
-app.use("/login", require("./login"));*/
+
+app.use("/", require("./phoneCall"));
 module.exports = app;

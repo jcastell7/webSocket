@@ -3,7 +3,6 @@ const { Services } = require("./services");
 const { connections } = require("./models");
 
 app.get("/", function(req, res) {
-  //console.log(req);
   res.status(200).send("api is working");
 });
 
